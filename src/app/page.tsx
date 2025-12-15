@@ -109,7 +109,7 @@ export default function TrustShieldLanding() {
           </motion.h1>
 
           <motion.p 
-            className="text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
@@ -162,7 +162,7 @@ export default function TrustShieldLanding() {
           </motion.div>
 
           <motion.div 
-            className="flex justify-center gap-8 text-sm text-gray-500"
+            className="flex justify-center gap-8 text-sm text-white/60"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
@@ -250,10 +250,10 @@ export default function TrustShieldLanding() {
                 
                 <div className="space-y-4">
                   {[
-                    { score: "90-100", label: "Excellent", color: "text-green-400", desc: "Verified legitimate email" },
+                    { score: "90-100", label: "Excellent", color: "text-white", desc: "Verified legitimate email" },
                     { score: "70-89", label: "Good", color: "text-white/80", desc: "Low risk, likely legitimate" },
-                    { score: "50-69", label: "Moderate", color: "text-yellow-400", desc: "Requires verification" },
-                    { score: "0-49", label: "High Risk", color: "text-red-400", desc: "Disposable or suspicious" }
+                    { score: "50-69", label: "Moderate", color: "text-white/80", desc: "Requires verification" },
+                    { score: "0-49", label: "High Risk", color: "text-white/60", desc: "Disposable or suspicious" }
                   ].map((range, index) => (
                     <div key={index} className="flex items-center gap-4">
                       <div className={`font-mono font-bold ${range.color}`}>{range.score}</div>
@@ -268,8 +268,8 @@ export default function TrustShieldLanding() {
               
               <div className="bg-black rounded-xl p-6 border border-white/10">
                 <h4 className="text-sm font-medium text-white/60 mb-4">API Response Example</h4>
-                <pre className="text-sm font-mono text-gray-300">
-                  <span className="text-gray-300">{`{`}</span>
+                <pre className="text-sm font-mono text-white">
+                  <span className="text-white">{`{`}</span>
                   <br />
                   <span className="text-white/40">  </span><span className="text-white">"email"</span><span className="text-white">: </span><span className="text-white">"user@example.com"</span><span className="text-white">,</span>
                   <br />
@@ -387,19 +387,19 @@ export default function TrustShieldLanding() {
               <div>
                 <h4 className="text-sm font-medium text-white/60 mb-2">Request</h4>
                 <div className="bg-black rounded-lg p-4 border border-white/10">
-                  <pre className="text-sm font-mono text-gray-300">
+                  <pre className="text-sm font-mono text-white">
                     <span className="text-white">curl</span>
                     <span className="text-white"> -X POST </span>
-                    <span className="text-green-400">https://api.trustshield.app/v1/validate</span>
+                    <span className="text-white">https://api.trustshield.app/v1/validate</span>
                     <br />
                     <span className="text-white">  </span><span className="text-white">-H</span>
-                    <span className="text-white"> </span><span className="text-green-400">"Authorization: Bearer your_api_key"</span>
+                    <span className="text-white"> </span><span className="text-white">"Authorization: Bearer your_api_key"</span>
                     <br />
                     <span className="text-white">  </span><span className="text-white">-H</span>
-                    <span className="text-white"> </span><span className="text-green-400">"Content-Type: application/json"</span>
+                    <span className="text-white"> </span><span className="text-white">"Content-Type: application/json"</span>
                     <br />
                     <span className="text-white">  </span><span className="text-white">-d</span>
-                    <span className="text-white"> </span><span className="text-green-400">'{`{"email": "user@company.com"}`}'</span>
+                    <span className="text-white"> </span><span className="text-white">'{`{"email": "user@company.com"}`}'</span>
                   </pre>
                 </div>
               </div>
@@ -407,18 +407,18 @@ export default function TrustShieldLanding() {
               <div>
                 <h4 className="text-sm font-medium text-white/60 mb-2">Node.js SDK</h4>
                 <div className="bg-black rounded-lg p-4 border border-white/10">
-                  <pre className="text-sm font-mono text-gray-300">
+                  <pre className="text-sm font-mono text-white">
                     <span className="text-white">const</span>
                     <span className="text-white"> trustshield = </span>
                     <span className="text-white">require</span>
-                    <span className="text-white">(</span><span className="text-green-400">'trustshield'</span>
+                    <span className="text-white">(</span><span className="text-white">'trustshield'</span>
                     <span className="text-white">);</span>
                     <br />
                     <br />
                     <span className="text-white">const</span>
                     <span className="text-white"> client = </span>
                     <span className="text-white">new</span>
-                    <span className="text-white"> trustshield(</span><span className="text-green-400">'your_api_key'</span>
+                    <span className="text-white"> trustshield(</span><span className="text-white">'your_api_key'</span>
                     <span className="text-white">);</span>
                     <br />
                     <br />
@@ -427,7 +427,7 @@ export default function TrustShieldLanding() {
                     <span className="text-white">await</span>
                     <span className="text-white"> client.validate(</span>
                     <br />
-                    <span className="text-white">  </span><span className="text-green-400">'user@company.com'</span>
+                    <span className="text-white">  </span><span className="text-white">'user@company.com'</span>
                     <span className="text-white">);</span>
                     <br />
                     <br />
