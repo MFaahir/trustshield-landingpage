@@ -536,7 +536,7 @@ export default function TrustShieldLanding() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-white/30 text-black hover:bg-white/10 hover:text-black px-8 py-4 text-lg font-medium h-auto"
+                className="border-white/30 text-black hover:bg-white/10 hover:text-white px-8 py-4 text-lg font-medium h-auto"
               >
                 Schedule Demo
               </Button>
