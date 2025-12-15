@@ -196,7 +196,7 @@ export default function TrustShieldLanding() {
             </Badge>
             <h2 className="text-4xl font-bold mb-4">Fake Users Are Costing You Real Money</h2>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-              Every fake signup costs you in server resources, support time, and polluted analytics. 
+              Every fake signup costs you in server resources, support time, and <span className="text-white">polluted analytics</span>. 
               The average business loses $50,000+ annually to fake account abuse.
             </p>
           </div>
@@ -224,9 +224,9 @@ export default function TrustShieldLanding() {
             ].map((item, index) => (
               <Card key={index} className="bg-black/50 border-white/10 hover:border-white/30 transition-all duration-300 rounded-xl p-6">
                 <div className="text-white mb-4">{item.icon}</div>
-                <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
+                <h3 className="text-lg font-semibold mb-3 text-white">{item.title}</h3>
                 <p className="text-gray-300 text-sm mb-3">{item.description}</p>
-                <div className="text-xs text-blue-400 font-medium">{item.impact}</div>
+                <div className="text-xs text-white font-medium">{item.impact}</div>
               </Card>
             ))}
           </div>
@@ -344,7 +344,7 @@ export default function TrustShieldLanding() {
             ].map((feature, index) => (
               <Card key={index} className="bg-black/50 border-white/10 hover:border-white/30 transition-all duration-300 rounded-xl p-6 group">
                 <div className="text-white mb-4 group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
-                <h3 className="text-lg font-semibold mb-3">{feature.title}</h3>
+                <h3 className="text-lg font-semibold mb-3 text-white">{feature.title}</h3>
                 <p className="text-white/60 text-sm mb-3">{feature.description}</p>
                 <div className="text-xs text-white font-medium bg-white/10 px-2 py-1 rounded-full inline-block">
                   {feature.tech}
@@ -536,7 +536,7 @@ export default function TrustShieldLanding() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-medium h-auto"
+                className="border-white/30 text-black hover:bg-white/10 hover:text-black px-8 py-4 text-lg font-medium h-auto"
               >
                 Schedule Demo
               </Button>
