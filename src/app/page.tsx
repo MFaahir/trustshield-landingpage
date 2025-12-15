@@ -109,7 +109,7 @@ export default function TrustShieldLanding() {
           </motion.h1>
 
           <motion.p 
-            className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
@@ -162,7 +162,7 @@ export default function TrustShieldLanding() {
           </motion.div>
 
           <motion.div 
-            className="flex justify-center gap-8 text-sm text-white/60"
+            className="flex justify-center gap-8 text-sm text-gray-400"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
@@ -195,7 +195,7 @@ export default function TrustShieldLanding() {
               The Problem
             </Badge>
             <h2 className="text-4xl font-bold mb-4">Fake Users Are Costing You Real Money</h2>
-            <p className="text-xl text-white/60 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Every fake signup costs you in server resources, support time, and polluted analytics. 
               The average business loses $50,000+ annually to fake account abuse.
             </p>
@@ -225,8 +225,8 @@ export default function TrustShieldLanding() {
               <Card key={index} className="bg-black/50 border-white/10 hover:border-white/30 transition-all duration-300 rounded-xl p-6">
                 <div className="text-white mb-4">{item.icon}</div>
                 <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-                <p className="text-white/60 text-sm mb-3">{item.description}</p>
-                <div className="text-xs text-white font-medium">{item.impact}</div>
+                <p className="text-gray-300 text-sm mb-3">{item.description}</p>
+                <div className="text-xs text-blue-400 font-medium">{item.impact}</div>
               </Card>
             ))}
           </div>
@@ -243,23 +243,23 @@ export default function TrustShieldLanding() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-4xl font-bold mb-4">The Trust Score System</h2>
-                <p className="text-white/60 mb-6 leading-relaxed">
+                <p className="text-gray-200 mb-6 leading-relaxed">
                   Our proprietary algorithm analyzes over 50 data points to calculate a Trust Score from 0-100. 
                   Higher scores indicate legitimate, low-risk email addresses that are safe to onboard.
                 </p>
                 
                 <div className="space-y-4">
                   {[
-                    { score: "90-100", label: "Excellent", color: "text-white", desc: "Verified legitimate email" },
-                    { score: "70-89", label: "Good", color: "text-white/80", desc: "Low risk, likely legitimate" },
-                    { score: "50-69", label: "Moderate", color: "text-white/80", desc: "Requires verification" },
-                    { score: "0-49", label: "High Risk", color: "text-white/60", desc: "Disposable or suspicious" }
+                    { score: "90-100", label: "Excellent", color: "text-green-400", desc: "Verified legitimate email" },
+                    { score: "70-89", label: "Good", color: "text-blue-400", desc: "Low risk, likely legitimate" },
+                    { score: "50-69", label: "Moderate", color: "text-yellow-400", desc: "Requires verification" },
+                    { score: "0-49", label: "High Risk", color: "text-red-400", desc: "Disposable or suspicious" }
                   ].map((range, index) => (
                     <div key={index} className="flex items-center gap-4">
                       <div className={`font-mono font-bold ${range.color}`}>{range.score}</div>
                       <div className="flex-1">
                         <div className={`text-sm font-medium ${range.color}`}>{range.label}</div>
-                        <div className="text-xs text-white/60">{range.desc}</div>
+                        <div className="text-xs text-gray-400">{range.desc}</div>
                       </div>
                     </div>
                   ))}
@@ -267,21 +267,21 @@ export default function TrustShieldLanding() {
               </div>
               
               <div className="bg-black rounded-xl p-6 border border-white/10">
-                <h4 className="text-sm font-medium text-white/60 mb-4">API Response Example</h4>
-                <pre className="text-sm font-mono text-white">
-                  <span className="text-white">{`{`}</span>
+                <h4 className="text-sm font-medium text-gray-400 mb-4">API Response Example</h4>
+                <pre className="text-sm font-mono text-gray-300">
+                  <span className="text-gray-300">{`{`}</span>
                   <br />
-                  <span className="text-white/40">  </span><span className="text-white">"email"</span><span className="text-white">: </span><span className="text-white">"user@example.com"</span><span className="text-white">,</span>
+                  <span className="text-gray-500">  </span><span className="text-green-400">"email"</span><span className="text-white">: </span><span className="text-yellow-400">"user@example.com"</span><span className="text-white">,</span>
                   <br />
-                  <span className="text-white/40">  </span><span className="text-white">"trust_score"</span><span className="text-white">: </span><span className="text-white">92</span><span className="text-white">,</span>
+                  <span className="text-gray-500">  </span><span className="text-green-400">"trust_score"</span><span className="text-white">: </span><span className="text-blue-400">92</span><span className="text-white">,</span>
                   <br />
-                  <span className="text-white/40">  </span><span className="text-white">"risk_level"</span><span className="text-white">: </span><span className="text-white">"LOW"</span><span className="text-white">,</span>
+                  <span className="text-gray-500">  </span><span className="text-green-400">"risk_level"</span><span className="text-white">: </span><span className="text-yellow-400">"LOW"</span><span className="text-white">,</span>
                   <br />
-                  <span className="text-white/40">  </span><span className="text-white">"is_disposable"</span><span className="text-white">: </span><span className="text-white">false</span><span className="text-white">,</span>
+                  <span className="text-gray-500">  </span><span className="text-green-400">"is_disposable"</span><span className="text-white">: </span><span className="text-blue-400">false</span><span className="text-white">,</span>
                   <br />
-                  <span className="text-white/40">  </span><span className="text-white">"domain_age"</span><span className="text-white">: </span><span className="text-white">5</span><span className="text-white"> years</span>
+                  <span className="text-gray-500">  </span><span className="text-green-400">"domain_age"</span><span className="text-white">: </span><span className="text-blue-400">5</span><span className="text-gray-300"> years</span>
                   <br />
-                  <span className="text-white">{`}`}</span>
+                  <span className="text-gray-300">{`}`}</span>
                 </pre>
               </div>
             </div>
@@ -298,7 +298,7 @@ export default function TrustShieldLanding() {
         >
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Enterprise-Grade Protection</h2>
-            <p className="text-xl text-white/60 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Built for developers who need reliable, scalable email validation without compromising on speed or accuracy.
             </p>
           </div>
@@ -368,7 +368,7 @@ export default function TrustShieldLanding() {
               Simple Integration
             </Badge>
             <h2 className="text-4xl font-bold mb-4">API Built for Developers</h2>
-            <p className="text-xl text-white/60 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Get started in minutes with our straightforward REST API. No complex setup required.
             </p>
           </div>
@@ -385,55 +385,55 @@ export default function TrustShieldLanding() {
             
             <div className="p-6 space-y-6">
               <div>
-                <h4 className="text-sm font-medium text-white/60 mb-2">Request</h4>
+                <h4 className="text-sm font-medium text-gray-400 mb-2">Request</h4>
                 <div className="bg-black rounded-lg p-4 border border-white/10">
-                  <pre className="text-sm font-mono text-white">
-                    <span className="text-white">curl</span>
+                  <pre className="text-sm font-mono text-gray-300">
+                    <span className="text-red-400">curl</span>
                     <span className="text-white"> -X POST </span>
-                    <span className="text-white">https://api.trustshield.app/v1/validate</span>
+                    <span className="text-cyan-400">https://api.trustshield.app/v1/validate</span>
                     <br />
-                    <span className="text-white">  </span><span className="text-white">-H</span>
-                    <span className="text-white"> </span><span className="text-white">"Authorization: Bearer your_api_key"</span>
+                    <span className="text-gray-500">  </span><span className="text-yellow-400">-H</span>
+                    <span className="text-white"> </span><span className="text-green-400">"Authorization: Bearer your_api_key"</span>
                     <br />
-                    <span className="text-white">  </span><span className="text-white">-H</span>
-                    <span className="text-white"> </span><span className="text-white">"Content-Type: application/json"</span>
+                    <span className="text-gray-500">  </span><span className="text-yellow-400">-H</span>
+                    <span className="text-white"> </span><span className="text-green-400">"Content-Type: application/json"</span>
                     <br />
-                    <span className="text-white">  </span><span className="text-white">-d</span>
-                    <span className="text-white"> </span><span className="text-white">'{`{"email": "user@company.com"}`}'</span>
+                    <span className="text-gray-500">  </span><span className="text-yellow-400">-d</span>
+                    <span className="text-white"> </span><span className="text-green-400">'{`{"email": "user@company.com"}`}'</span>
                   </pre>
                 </div>
               </div>
 
               <div>
-                <h4 className="text-sm font-medium text-white/60 mb-2">Node.js SDK</h4>
+                <h4 className="text-sm font-medium text-gray-400 mb-2">Node.js SDK</h4>
                 <div className="bg-black rounded-lg p-4 border border-white/10">
-                  <pre className="text-sm font-mono text-white">
-                    <span className="text-white">const</span>
+                  <pre className="text-sm font-mono text-gray-300">
+                    <span className="text-blue-400">const</span>
                     <span className="text-white"> trustshield = </span>
-                    <span className="text-white">require</span>
-                    <span className="text-white">(</span><span className="text-white">'trustshield'</span>
+                    <span className="text-yellow-400">require</span>
+                    <span className="text-white">(</span><span className="text-green-400">'trustshield'</span>
                     <span className="text-white">);</span>
                     <br />
                     <br />
-                    <span className="text-white">const</span>
+                    <span className="text-blue-400">const</span>
                     <span className="text-white"> client = </span>
-                    <span className="text-white">new</span>
-                    <span className="text-white"> trustshield(</span><span className="text-white">'your_api_key'</span>
+                    <span className="text-purple-400">new</span>
+                    <span className="text-white"> trustshield(</span><span className="text-green-400">'your_api_key'</span>
                     <span className="text-white">);</span>
                     <br />
                     <br />
-                    <span className="text-white">const</span>
+                    <span className="text-blue-400">const</span>
                     <span className="text-white"> result = </span>
-                    <span className="text-white">await</span>
+                    <span className="text-orange-400">await</span>
                     <span className="text-white"> client.validate(</span>
                     <br />
-                    <span className="text-white">  </span><span className="text-white">'user@company.com'</span>
+                    <span className="text-gray-500">  </span><span className="text-green-400">'user@company.com'</span>
                     <span className="text-white">);</span>
                     <br />
                     <br />
-                    <span className="text-white">console</span>
+                    <span className="text-blue-400">console</span>
                     <span className="text-white">.log(result.trust_score); </span>
-                    <span className="text-white/60">// 92</span>
+                    <span className="text-gray-500">// 92</span>
                   </pre>
                 </div>
               </div>
@@ -450,7 +450,7 @@ export default function TrustShieldLanding() {
         >
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Trusted by Leading Companies</h2>
-            <p className="text-xl text-white/60 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Join hundreds of companies protecting their applications with TrustShield
             </p>
           </div>
@@ -482,10 +482,10 @@ export default function TrustShieldLanding() {
                     <Star key={i} className="w-4 h-4 text-white fill-current" />
                   ))}
                 </div>
-                <p className="text-white/80 mb-4 italic">"{testimonial.quote}"</p>
+                <p className="text-gray-200 mb-4 italic">"{testimonial.quote}"</p>
                 <div>
                   <div className="font-medium">{testimonial.author}</div>
-                  <div className="text-sm text-white/60">{testimonial.title}</div>
+                  <div className="text-sm text-gray-400">{testimonial.title}</div>
                 </div>
               </Card>
             ))}
@@ -521,7 +521,7 @@ export default function TrustShieldLanding() {
           <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/30 rounded-2xl p-12 text-center">
             <Shield className="w-16 h-16 text-white mx-auto mb-6" />
             <h2 className="text-4xl font-bold mb-4">Ready to Protect Your Business?</h2>
-            <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
               Join our beta program and get early access to the most advanced email protection API on the market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -559,14 +559,14 @@ export default function TrustShieldLanding() {
                 <Shield className="w-6 h-6 text-white" />
                 <div className="font-bold text-xl">TrustShield</div>
               </div>
-              <p className="text-sm text-white/60">
+              <p className="text-sm text-gray-400">
                 Protecting businesses from fake users and email abuse with enterprise-grade validation.
               </p>
             </div>
             
             <div>
               <h4 className="font-semibold mb-4">Product</h4>
-              <div className="space-y-2 text-sm text-white/60">
+              <div className="space-y-2 text-sm text-gray-400">
                 <a href="#" className="hover:text-white transition-colors">Features</a>
                 <br />
                 <a href="#" className="hover:text-white transition-colors">API Documentation</a>
@@ -579,7 +579,7 @@ export default function TrustShieldLanding() {
             
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
-              <div className="space-y-2 text-sm text-white/60">
+              <div className="space-y-2 text-sm text-gray-400">
                 <a href="#" className="hover:text-white transition-colors">About</a>
                 <br />
                 <a href="#" className="hover:text-white transition-colors">Blog</a>
@@ -592,7 +592,7 @@ export default function TrustShieldLanding() {
             
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>
-              <div className="space-y-2 text-sm text-white/60">
+              <div className="space-y-2 text-sm text-gray-400">
                 <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
                 <br />
                 <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
@@ -605,7 +605,7 @@ export default function TrustShieldLanding() {
           </div>
           
           <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-sm text-white/60 mb-4 sm:mb-0">
+            <p className="text-sm text-gray-400 mb-4 sm:mb-0">
               © 2024 TrustShield. All rights reserved. Built with ❤️ for developers.
             </p>
             <div className="flex gap-4">
