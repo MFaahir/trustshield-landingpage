@@ -441,75 +441,7 @@ export default function TrustShieldLanding() {
           </div>
         </motion.section>
 
-        {/* Social Proof */}
-        <motion.section 
-          className="mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.0, duration: 0.5 }}
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Trusted by Leading Companies</h2>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-              Join hundreds of companies protecting their applications with TrustShield
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {[
-              {
-                quote: "TrustShield reduced our fake signups by 94% in the first month. The ROI was immediate.",
-                author: "Sarah Chen",
-                title: "CTO at TechCorp",
-                rating: 5
-              },
-              {
-                quote: "The API is incredibly fast and reliable. It seamlessly integrated with our existing auth flow.",
-                author: "Michael Rodriguez",
-                title: "Lead Engineer at SaaSHub",
-                rating: 5
-              },
-              {
-                quote: "Finally, an email validation service that actually catches disposable emails accurately.",
-                author: "Emily Watson",
-                title: "Product Manager at CloudFlow",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <Card key={index} className="bg-black/50 border-white/10 rounded-xl p-6">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-white fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-200 mb-4 italic">"{testimonial.quote}"</p>
-                <div>
-                  <div className="font-medium">{testimonial.author}</div>
-                  <div className="text-sm text-gray-400">{testimonial.title}</div>
-                </div>
-              </Card>
-            ))}
-          </div>
-
-          <div className="flex justify-center gap-12 text-center">
-            <div>
-              <div className="text-3xl font-bold text-white mb-1">500M+</div>
-              <div className="text-sm text-white/60">Emails Validated</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-white mb-1">99.9%</div>
-              <div className="text-sm text-white/60">Uptime SLA</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-white mb-1">&lt;50ms</div>
-              <div className="text-sm text-white/60">Avg Response</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-white mb-1">24/7</div>
-              <div className="text-sm text-white/60">Support</div>
-            </div>
-          </div>
-        </motion.section>
 
         {/* Final CTA */}
         <motion.section 
