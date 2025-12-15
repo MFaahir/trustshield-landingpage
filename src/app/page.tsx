@@ -35,25 +35,23 @@ export default function TrustShieldLanding() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Enhanced Background */}
       <div 
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: `radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-                           radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
-                           linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), 
-                           linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), 
+                           linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)`,
           backgroundSize: '50% 50%, 50% 50%, 60px 60px, 60px 60px'
         }}
       />
       
       {/* Animated Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 via-transparent to-indigo-900/5 animate-pulse" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-transparent to-gray-900/10 animate-pulse" />
 
       {/* Enhanced Navbar */}
       <motion.nav 
-        className="sticky top-0 z-50 backdrop-blur-lg bg-slate-950/70 border-b border-slate-800/50"
+        className="sticky top-0 z-50 backdrop-blur-lg bg-black/70 border-b border-white/10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
@@ -64,14 +62,14 @@ export default function TrustShieldLanding() {
             <div className="font-bold text-xl tracking-tight">TrustShield</div>
           </div>
           <div className="flex items-center gap-6">
-            <a href="#features" className="text-sm text-gray-400 hover:text-white transition-colors">Features</a>
-            <a href="#api" className="text-sm text-gray-400 hover:text-white transition-colors">API</a>
-            <a href="#security" className="text-sm text-gray-400 hover:text-white transition-colors">Security</a>
+            <a href="#features" className="text-sm text-white/60 hover:text-white transition-colors">Features</a>
+            <a href="#api" className="text-sm text-white/60 hover:text-white transition-colors">API</a>
+            <a href="#security" className="text-sm text-white/60 hover:text-white transition-colors">Security</a>
             <div className="flex gap-2">
-              <Button variant="ghost" size="icon" className="hover:bg-slate-800/50">
+              <Button variant="ghost" size="icon" className="hover:bg-white/20">
                 <Twitter className="w-4 h-4" />
               </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-slate-800/50">
+              <Button variant="ghost" size="icon" className="hover:bg-white/20">
                 <Github className="w-4 h-4" />
               </Button>
             </div>
@@ -92,7 +90,7 @@ export default function TrustShieldLanding() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1, duration: 0.3 }}
           >
-            <Badge className="mb-8 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border-yellow-500/30 text-yellow-400 px-6 py-2 text-sm font-medium hover:from-yellow-500/30 hover:to-orange-500/30 transition-all duration-300">
+            <Badge className="mb-8 bg-gradient-to-r from-white/20 to-white/10 border-white/30 text-white px-6 py-2 text-sm font-medium hover:from-white/30 hover:to-white/20 transition-all duration-300">
               🚧 Under Construction • Public Beta Coming Soon
             </Badge>
           </motion.div>
@@ -103,7 +101,7 @@ export default function TrustShieldLanding() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <span className="bg-gradient-to-r from-white via-gray-100 to-gray-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white via-white/80 to-white/60 bg-clip-text text-transparent">
               Protect Your<br />
               Business From<br />
               Fake Users
@@ -116,7 +114,7 @@ export default function TrustShieldLanding() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            TrustShield delivers a <span className="text-white font-medium">Trust Score (0-100)</span> for every email address, 
+            TrustShield delivers a <span className="text-white font-bold">Trust Score (0-100)</span> for every email address, 
             detecting disposable emails, fake accounts, and high-risk signups before they impact your business.
           </motion.p>
 
@@ -132,7 +130,7 @@ export default function TrustShieldLanding() {
                 placeholder="work@company.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="h-12 bg-slate-900/50 border-slate-800 text-white placeholder:text-gray-500 focus:border-blue-500 transition-all duration-300"
+                className="h-12 bg-black/50 border-white/20 text-white placeholder:text-white/30 focus:border-white transition-all duration-300"
                 disabled={isLoading}
               />
               <Input
@@ -140,13 +138,13 @@ export default function TrustShieldLanding() {
                 placeholder="Company (optional)"
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
-                className="h-12 bg-slate-900/50 border-slate-800 text-white placeholder:text-gray-500 focus:border-blue-500 transition-all duration-300"
+                className="h-12 bg-black/50 border-white/20 text-white placeholder:text-white/30 focus:border-white transition-all duration-300"
                 disabled={isLoading}
               />
             </div>
             <Button 
               onClick={handleSubmit}
-              className="bg-gradient-to-r from-white to-gray-300 hover:from-gray-200 hover:to-gray-400 text-black hover:scale-105 transition-all duration-300 h-12 px-8 text-base font-medium shadow-lg shadow-white/20"
+              className="bg-white hover:bg-gray-100 text-black hover:scale-105 transition-all duration-300 h-12 px-8 text-base font-medium shadow-lg"
               disabled={isLoading}
             >
               {isLoading ? (
@@ -170,15 +168,15 @@ export default function TrustShieldLanding() {
             transition={{ delay: 0.5, duration: 0.5 }}
           >
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
+              <CheckCircle className="w-4 h-4 text-white" />
               <span>No credit card required</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
+              <CheckCircle className="w-4 h-4 text-white" />
               <span>14-day free trial</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
+              <CheckCircle className="w-4 h-4 text-white" />
               <span>Cancel anytime</span>
             </div>
           </motion.div>
@@ -192,12 +190,12 @@ export default function TrustShieldLanding() {
           transition={{ delay: 0.6, duration: 0.5 }}
         >
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-red-500/20 border-red-500/30 text-red-400">
+            <Badge className="mb-4 bg-white/10 border-white/30 text-white">
               <AlertCircle className="w-3 h-3 mr-2" />
               The Problem
             </Badge>
             <h2 className="text-4xl font-bold mb-4">Fake Users Are Costing You Real Money</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-white/60 max-w-3xl mx-auto">
               Every fake signup costs you in server resources, support time, and polluted analytics. 
               The average business loses $50,000+ annually to fake account abuse.
             </p>
@@ -224,11 +222,11 @@ export default function TrustShieldLanding() {
                 impact: "25% inaccurate metrics"
               }
             ].map((item, index) => (
-              <Card key={index} className="bg-slate-900/50 border-slate-800 hover:border-red-500/30 transition-all duration-300 rounded-xl p-6">
-                <div className="text-red-400 mb-4">{item.icon}</div>
+              <Card key={index} className="bg-black/50 border-white/10 hover:border-white/30 transition-all duration-300 rounded-xl p-6">
+                <div className="text-white mb-4">{item.icon}</div>
                 <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-                <p className="text-gray-400 text-sm mb-3">{item.description}</p>
-                <div className="text-xs text-red-400 font-medium">{item.impact}</div>
+                <p className="text-white/60 text-sm mb-3">{item.description}</p>
+                <div className="text-xs text-white font-medium">{item.impact}</div>
               </Card>
             ))}
           </div>
@@ -241,11 +239,11 @@ export default function TrustShieldLanding() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.5 }}
         >
-          <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700/50 rounded-2xl p-8 mb-12">
+          <div className="bg-gradient-to-br from-black/50 to-white/5 border border-white/10 rounded-2xl p-8 mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-4xl font-bold mb-4">The Trust Score System</h2>
-                <p className="text-gray-400 mb-6 leading-relaxed">
+                <p className="text-white/60 mb-6 leading-relaxed">
                   Our proprietary algorithm analyzes over 50 data points to calculate a Trust Score from 0-100. 
                   Higher scores indicate legitimate, low-risk email addresses that are safe to onboard.
                 </p>
@@ -253,7 +251,7 @@ export default function TrustShieldLanding() {
                 <div className="space-y-4">
                   {[
                     { score: "90-100", label: "Excellent", color: "text-green-400", desc: "Verified legitimate email" },
-                    { score: "70-89", label: "Good", color: "text-gray-300", desc: "Low risk, likely legitimate" },
+                    { score: "70-89", label: "Good", color: "text-white/80", desc: "Low risk, likely legitimate" },
                     { score: "50-69", label: "Moderate", color: "text-yellow-400", desc: "Requires verification" },
                     { score: "0-49", label: "High Risk", color: "text-red-400", desc: "Disposable or suspicious" }
                   ].map((range, index) => (
@@ -261,29 +259,29 @@ export default function TrustShieldLanding() {
                       <div className={`font-mono font-bold ${range.color}`}>{range.score}</div>
                       <div className="flex-1">
                         <div className={`text-sm font-medium ${range.color}`}>{range.label}</div>
-                        <div className="text-xs text-gray-500">{range.desc}</div>
+                        <div className="text-xs text-white/60">{range.desc}</div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
               
-              <div className="bg-slate-950 rounded-xl p-6 border border-slate-700">
-                <h4 className="text-sm font-medium text-gray-400 mb-4">API Response Example</h4>
+              <div className="bg-black rounded-xl p-6 border border-white/10">
+                <h4 className="text-sm font-medium text-white/60 mb-4">API Response Example</h4>
                 <pre className="text-sm font-mono text-gray-300">
                   <span className="text-gray-300">{`{`}</span>
                   <br />
-                  <span className="text-gray-500">  </span><span className="text-green-400">"email"</span><span className="text-white">: </span><span className="text-yellow-400">"user@example.com"</span><span className="text-white">,</span>
+                  <span className="text-white/40">  </span><span className="text-white">"email"</span><span className="text-white">: </span><span className="text-white">"user@example.com"</span><span className="text-white">,</span>
                   <br />
-                  <span className="text-gray-500">  </span><span className="text-green-400">"trust_score"</span><span className="text-white">: </span><span className="text-gray-300">92</span><span className="text-white">,</span>
+                  <span className="text-white/40">  </span><span className="text-white">"trust_score"</span><span className="text-white">: </span><span className="text-white">92</span><span className="text-white">,</span>
                   <br />
-                  <span className="text-gray-500">  </span><span className="text-green-400">"risk_level"</span><span className="text-white">: </span><span className="text-yellow-400">"LOW"</span><span className="text-white">,</span>
+                  <span className="text-white/40">  </span><span className="text-white">"risk_level"</span><span className="text-white">: </span><span className="text-white">"LOW"</span><span className="text-white">,</span>
                   <br />
-                  <span className="text-gray-500">  </span><span className="text-green-400">"is_disposable"</span><span className="text-white">: </span><span className="text-gray-300">false</span><span className="text-white">,</span>
+                  <span className="text-white/40">  </span><span className="text-white">"is_disposable"</span><span className="text-white">: </span><span className="text-white">false</span><span className="text-white">,</span>
                   <br />
-                  <span className="text-gray-500">  </span><span className="text-green-400">"domain_age"</span><span className="text-white">: </span><span className="text-gray-300">5</span><span className="text-gray-500"> years</span>
+                  <span className="text-white/40">  </span><span className="text-white">"domain_age"</span><span className="text-white">: </span><span className="text-white">5</span><span className="text-white"> years</span>
                   <br />
-                  <span className="text-gray-300">{`}`}</span>
+                  <span className="text-white">{`}`}</span>
                 </pre>
               </div>
             </div>
@@ -300,7 +298,7 @@ export default function TrustShieldLanding() {
         >
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Enterprise-Grade Protection</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-white/60 max-w-3xl mx-auto">
               Built for developers who need reliable, scalable email validation without compromising on speed or accuracy.
             </p>
           </div>
@@ -344,11 +342,11 @@ export default function TrustShieldLanding() {
                 tech: "8+ SDKs"
               }
             ].map((feature, index) => (
-              <Card key={index} className="bg-slate-900/50 border-slate-800 hover:border-blue-500/30 transition-all duration-300 rounded-xl p-6 group">
+              <Card key={index} className="bg-black/50 border-white/10 hover:border-white/30 transition-all duration-300 rounded-xl p-6 group">
                 <div className="text-white mb-4 group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
                 <h3 className="text-lg font-semibold mb-3">{feature.title}</h3>
-                <p className="text-gray-400 text-sm mb-3">{feature.description}</p>
-                <div className="text-xs text-gray-300 font-medium bg-gray-700/50 px-2 py-1 rounded-full inline-block">
+                <p className="text-white/60 text-sm mb-3">{feature.description}</p>
+                <div className="text-xs text-white font-medium bg-white/10 px-2 py-1 rounded-full inline-block">
                   {feature.tech}
                 </div>
               </Card>
@@ -365,30 +363,30 @@ export default function TrustShieldLanding() {
           transition={{ delay: 0.9, duration: 0.5 }}
         >
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-gray-700/30 border-gray-600/50 text-white">
+            <Badge className="mb-4 bg-white/10 border-white/30 text-white">
               <Code2 className="w-3 h-3 mr-2" />
               Simple Integration
             </Badge>
             <h2 className="text-4xl font-bold mb-4">API Built for Developers</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-white/60 max-w-3xl mx-auto">
               Get started in minutes with our straightforward REST API. No complex setup required.
             </p>
           </div>
 
-          <div className="bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-700">
+          <div className="bg-black/50 border border-white/10 rounded-2xl overflow-hidden">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-white"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              <div className="text-sm text-gray-400">Endpoint: /api/v1/validate</div>
+              <div className="text-sm text-white/60">Endpoint: /api/v1/validate</div>
             </div>
             
             <div className="p-6 space-y-6">
               <div>
-                <h4 className="text-sm font-medium text-gray-400 mb-2">Request</h4>
-                <div className="bg-slate-950 rounded-lg p-4 border border-slate-700">
+                <h4 className="text-sm font-medium text-white/60 mb-2">Request</h4>
+                <div className="bg-black rounded-lg p-4 border border-white/10">
                   <pre className="text-sm font-mono text-gray-300">
                     <span className="text-white">curl</span>
                     <span className="text-white"> -X POST </span>
@@ -407,8 +405,8 @@ export default function TrustShieldLanding() {
               </div>
 
               <div>
-                <h4 className="text-sm font-medium text-gray-400 mb-2">Node.js SDK</h4>
-                <div className="bg-slate-950 rounded-lg p-4 border border-slate-700">
+                <h4 className="text-sm font-medium text-white/60 mb-2">Node.js SDK</h4>
+                <div className="bg-black rounded-lg p-4 border border-white/10">
                   <pre className="text-sm font-mono text-gray-300">
                     <span className="text-white">const</span>
                     <span className="text-white"> trustshield = </span>
@@ -435,7 +433,7 @@ export default function TrustShieldLanding() {
                     <br />
                     <span className="text-white">console</span>
                     <span className="text-white">.log(result.trust_score); </span>
-                    <span className="text-gray-500">// 92</span>
+                    <span className="text-white/60">// 92</span>
                   </pre>
                 </div>
               </div>
@@ -452,7 +450,7 @@ export default function TrustShieldLanding() {
         >
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Trusted by Leading Companies</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-white/60 max-w-3xl mx-auto">
               Join hundreds of companies protecting their applications with TrustShield
             </p>
           </div>
@@ -478,16 +476,16 @@ export default function TrustShieldLanding() {
                 rating: 5
               }
             ].map((testimonial, index) => (
-              <Card key={index} className="bg-slate-900/50 border-slate-800 rounded-xl p-6">
+              <Card key={index} className="bg-black/50 border-white/10 rounded-xl p-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-4 h-4 text-white fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-300 mb-4 italic">"{testimonial.quote}"</p>
+                <p className="text-white/80 mb-4 italic">"{testimonial.quote}"</p>
                 <div>
                   <div className="font-medium">{testimonial.author}</div>
-                  <div className="text-sm text-gray-500">{testimonial.title}</div>
+                  <div className="text-sm text-white/60">{testimonial.title}</div>
                 </div>
               </Card>
             ))}
@@ -496,19 +494,19 @@ export default function TrustShieldLanding() {
           <div className="flex justify-center gap-12 text-center">
             <div>
               <div className="text-3xl font-bold text-white mb-1">500M+</div>
-              <div className="text-sm text-gray-500">Emails Validated</div>
+              <div className="text-sm text-white/60">Emails Validated</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-green-400 mb-1">99.9%</div>
-              <div className="text-sm text-gray-500">Uptime SLA</div>
+              <div className="text-3xl font-bold text-white mb-1">99.9%</div>
+              <div className="text-sm text-white/60">Uptime SLA</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-yellow-400 mb-1">&lt;50ms</div>
-              <div className="text-sm text-gray-500">Avg Response</div>
+              <div className="text-3xl font-bold text-white mb-1">&lt;50ms</div>
+              <div className="text-sm text-white/60">Avg Response</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-purple-400 mb-1">24/7</div>
-              <div className="text-sm text-gray-500">Support</div>
+              <div className="text-3xl font-bold text-white mb-1">24/7</div>
+              <div className="text-sm text-white/60">Support</div>
             </div>
           </div>
         </motion.section>
@@ -520,16 +518,16 @@ export default function TrustShieldLanding() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.5 }}
         >
-          <div className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 border border-blue-500/30 rounded-2xl p-12 text-center">
+          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/30 rounded-2xl p-12 text-center">
             <Shield className="w-16 h-16 text-white mx-auto mb-6" />
             <h2 className="text-4xl font-bold mb-4">Ready to Protect Your Business?</h2>
-            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto">
               Join our beta program and get early access to the most advanced email protection API on the market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg"
-                className="bg-white hover:bg-gray-200 text-black px-8 py-4 text-lg font-medium h-auto hover:scale-105 transition-all duration-300"
+                className="bg-white hover:bg-gray-100 text-black px-8 py-4 text-lg font-medium h-auto hover:scale-105 transition-all duration-300"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 Join Beta Waitlist
@@ -538,7 +536,7 @@ export default function TrustShieldLanding() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-slate-700 text-white hover:bg-slate-800 px-8 py-4 text-lg font-medium h-auto"
+                className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-medium h-auto"
               >
                 Schedule Demo
               </Button>
@@ -549,7 +547,7 @@ export default function TrustShieldLanding() {
 
       {/* Enhanced Footer */}
       <motion.footer 
-        className="border-t border-slate-800 py-12"
+        className="border-t border-white/10 py-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.5 }}
@@ -561,14 +559,14 @@ export default function TrustShieldLanding() {
                 <Shield className="w-6 h-6 text-white" />
                 <div className="font-bold text-xl">TrustShield</div>
               </div>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-white/60">
                 Protecting businesses from fake users and email abuse with enterprise-grade validation.
               </p>
             </div>
             
             <div>
               <h4 className="font-semibold mb-4">Product</h4>
-              <div className="space-y-2 text-sm text-gray-400">
+              <div className="space-y-2 text-sm text-white/60">
                 <a href="#" className="hover:text-white transition-colors">Features</a>
                 <br />
                 <a href="#" className="hover:text-white transition-colors">API Documentation</a>
@@ -581,7 +579,7 @@ export default function TrustShieldLanding() {
             
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
-              <div className="space-y-2 text-sm text-gray-400">
+              <div className="space-y-2 text-sm text-white/60">
                 <a href="#" className="hover:text-white transition-colors">About</a>
                 <br />
                 <a href="#" className="hover:text-white transition-colors">Blog</a>
@@ -594,7 +592,7 @@ export default function TrustShieldLanding() {
             
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>
-              <div className="space-y-2 text-sm text-gray-400">
+              <div className="space-y-2 text-sm text-white/60">
                 <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
                 <br />
                 <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
@@ -606,8 +604,8 @@ export default function TrustShieldLanding() {
             </div>
           </div>
           
-          <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400 mb-4 sm:mb-0">
+          <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center">
+            <p className="text-sm text-white/60 mb-4 sm:mb-0">
               © 2024 TrustShield. All rights reserved. Built with ❤️ for developers.
             </p>
             <div className="flex gap-4">
